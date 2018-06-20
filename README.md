@@ -21,14 +21,12 @@ var mySecondTimer = new Timer({time:3000}); // Execute each 3s and infinite
 - Execution code (two ways):
 ```javascript
 var myThirdTimer = new Timer();
+
 /* Own function */
-myThirdTimer.execute = function() {
-// code something here
-};
+myThirdTimer.execute = function() { /* code something here */ };
+
 /* Function already exist */
-function showMeSomething() {
-console.log("Yes my Lord, I'll show something!");
-}
+function showMeSomething() { console.log("Yes my Lord, I'll show something!"); }
 myThridTimer.execute = showMeSomething;
 myThirdTimer.start();
 ```
@@ -37,9 +35,9 @@ myThirdTimer.start();
 ```javascript
 myForthExample = new Timer({time:2000, times:5});
 myForthExample.execute = function() {
-// Code here
-// IMPORTANT: need adapt here to stop when reaches the limit
-// Example: if(this.times < 1) { this.stop(); }
+  // Code here
+  // IMPORTANT: need adapt here to stop when reaches the limit
+  // Example: if(this.times < 1) { this.stop(); }
 }
 ```
 
@@ -47,11 +45,16 @@ myForthExample.execute = function() {
 ```javascript
 // Passing the params for him
 var myFifthTimer = new Timer({
-oneText:"text",
-oneNumber:42,
-oneList:[5, 10, 15],
-oneObject:{ name:"Neku Sakuraba", game:"The World Ends With You", ILoveThis:true }
+  oneText: "text",
+  oneNumber: 42,
+  oneList: [5, 10, 15],
+  oneObject: {
+    name: "Neku Sakuraba",
+    game: "The World Ends With You",
+    ILoveThis: true
+  }
 });
+
 // Each custom attr he storage inside of "val"
 myFifthTimer.execute = function() {
   console.log(this.val); // show all custom values storage
