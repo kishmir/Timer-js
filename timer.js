@@ -1,19 +1,18 @@
 class Timer {
   constructor() {
-    var obj = this;
-    obj.time = 2000;
-    obj.times = -1;
-    obj.initialTimes = obj.times;
-    obj.val = {};
+    this.time = 2000;
+    this.times = -1;
+    this.initialTimes = this.times;
+    this.val = {};
 
     var args = arguments[0];
 
     if (typeof args == 'object') {
       for (var key in args) {
-        if (obj[key] !== undefined) {
-          obj[key] = args[key];
+        if (this[key] !== undefined) {
+          this[key] = args[key];
         } else {
-          obj.val[key] = args[key];
+          this.val[key] = args[key];
         }
       }
     }
@@ -37,9 +36,8 @@ class Timer {
   }
 
   start() {
-    var obj = this;
-    obj.stop();
-    obj.timer = setInterval(function() { obj.execute(); }, obj.time);
+    this.stop();
+    this.timer = setInterval( ()=>this.execute(), this.time);
   }
 
   stop() { clearInterval(this.timer); }
